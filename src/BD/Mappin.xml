@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="BD.Album" table="album" schema="discografica">
+        <id name="id">
+            <column name="id" sql-type="int(4)"/>
+        </id>
+        <property name="tituloAl">
+            <column name="titulo_al" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="anio">
+            <column name="anio" sql-type="year(4)" not-null="true"/>
+        </property>
+    </class>
+    <class name="BD.Cancion" table="cancion" schema="discografica">
+        <id name="titulo">
+            <column name="titulo" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="duracion">
+            <column name="duracion" sql-type="int(4)" not-null="true"/>
+        </property>
+        <property name="letra">
+            <column name="letra" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="idAlbum">
+            <column name="id_album" sql-type="int(4)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
